@@ -33,3 +33,12 @@ damaged: boolean
 description: string?
 engine: Engine
 ```
+
+## Endpoints
+
+### Engine
+```
+(GET)  /api/engine
+(POST) /api/engine
+(PUT)  /api/engine/{id}
+```
