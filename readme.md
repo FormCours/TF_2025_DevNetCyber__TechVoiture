@@ -1,18 +1,18 @@
 # API TechVoiture
 
 ## Architecture : 3 tiers + Domain
-- **API:**
-Interface vers l'exterieur.
-Traitre les requetes et renvoyer la réponse adapté
-- **BLL:**
+- **API:** \
+Interface vers l'exterieur. \
+Traitre les requetes et renvoyer la rÃ©ponse adaptÃ©
+- **BLL:** \
 Logique metier
-- **DAL:**
-Acces aux données (DB, fichier, api externe, ...)
-- **Domain:**
-Couche transversal (Connu de l'API, la BLL et la DAL)
-Défini le models des données, les execptions, les constantes, ...
+- **DAL:** \
+Acces aux donnÃ©es (DB, fichier, api externe, ...)
+- **Domain:** \
+Couche transversal (Connu de l'API, la BLL et la DAL) \
+DÃ©fini le models des donnÃ©es, les execptions, les constantes, ...
 
-## Structure de données
+## Structure de donnÃ©es
 
 ### Engine
 ```
