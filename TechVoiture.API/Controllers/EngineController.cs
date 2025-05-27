@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using TechVoiture.API.Dto.Input;
 using TechVoiture.API.Dto.Output;
+using TechVoiture.BLL.Services;
+using TechVoiture.Domain.Models;
 
 namespace TechVoiture.API.Controllers
 {
@@ -11,6 +14,16 @@ namespace TechVoiture.API.Controllers
     [Produces("application/json")]
     public class EngineController : ControllerBase
     {
+        private readonly EngineService _engineService;
+        private readonly IMapper _mapper;
+
+        public EngineController(EngineService engineService, IMapper mapper)
+        {
+            _engineService = engineService;
+            _mapper = mapper;
+        }
+
+
         [HttpGet]
         [ProducesResponseType<IEnumerable<EngineOutputDTO>>(200)]
         public IActionResult GetAll()
@@ -25,8 +38,10 @@ namespace TechVoiture.API.Controllers
         [ProducesResponseType(400)]
         public IActionResult Add([FromBody] EngineInputDTO data)
         {
-            // TODO Utilisation des services (BLL) pour ajouter un moteur
-            return StatusCode(501);
+            Engine result = _engineService.Create(_mapper.Map<Engine>(data));
+        
+            EngineOutputDTO responseData = _mapper.Map<EngineOutputDTO>(result);
+            return CreatedAtAction(nameof(GetAll), responseData);
         }
 
         [HttpPut("{id:int}")]
