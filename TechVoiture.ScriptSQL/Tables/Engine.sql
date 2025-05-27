@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Engine]
+(
+	[Id] INT NOT NULL IDENTITY,
+	[Name] VARCHAR(50) NOT NULL,
+	[Fuel] VARCHAR(50) NULL,
+	[CreatedAt] DATETIME2 DEFAULT GETDATE(),
+	CONSTRAINT [PK_Engine] PRIMARY KEY([Id]),
+	CONSTRAINT [UK_Engine] UNIQUE ([Name], [Fuel])
+)

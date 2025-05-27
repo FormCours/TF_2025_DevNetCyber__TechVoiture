@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechVoiture.API", "TechVoiture.API\TechVoiture.API.csproj", "{6B4879C4-149F-4C69-B1C2-B39EA807B6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechVoiture.API", "TechVoiture.API\TechVoiture.API.csproj", "{6B4879C4-149F-4C69-B1C2-B39EA807B6DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechVoiture.BLL", "TechVoiture.BLL\TechVoiture.BLL.csproj", "{CD2EDE37-62A1-4D55-8919-ED574356BA95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechVoiture.BLL", "TechVoiture.BLL\TechVoiture.BLL.csproj", "{CD2EDE37-62A1-4D55-8919-ED574356BA95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechVoiture.DAL", "TechVoiture.DAL\TechVoiture.DAL.csproj", "{4B6C38D9-0D49-46AF-A4BE-C7B3C958E398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechVoiture.DAL", "TechVoiture.DAL\TechVoiture.DAL.csproj", "{4B6C38D9-0D49-46AF-A4BE-C7B3C958E398}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechVoiture.Domain", "TechVoiture.Domain\TechVoiture.Domain.csproj", "{CAFE45F8-6757-42C4-8549-E94A6E67218D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechVoiture.Domain", "TechVoiture.Domain\TechVoiture.Domain.csproj", "{CAFE45F8-6757-42C4-8549-E94A6E67218D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{A2FAAA0C-4EE8-49AD-8168-AE1C65FE5207}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TechVoiture.ScriptSQL", "TechVoiture.ScriptSQL\TechVoiture.ScriptSQL.sqlproj", "{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,12 @@ Global
 		{CAFE45F8-6757-42C4-8549-E94A6E67218D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFE45F8-6757-42C4-8549-E94A6E67218D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAFE45F8-6757-42C4-8549-E94A6E67218D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA17F04F-FF05-43C6-8B2F-90256D29BAC1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
