@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Mapper
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 // Add services to the container.
 
 builder.Services.AddControllers();
