@@ -34,7 +34,34 @@ description: string?
 engine: Engine
 ```
 
+## MemberRole
+```
+id: int
+name: string
+desc: string?
+```
+
+### Member
+```
+id: int
+email: string
+hash_password: string
+firstname: string?
+lastname: string?
+role: Role
+```
+
+
 ## Endpoints
+
+## Auth
+(POST) /api/auth/login
+(POST) /api/auth/register
+
+### Member
+(GET) /api/member
+(GET) /api/member/{id}
+(PUT) /api/member/{id?}
 
 ### Engine
 ```
