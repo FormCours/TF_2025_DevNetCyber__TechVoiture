@@ -1,4 +1,5 @@
-﻿using TechVoiture.Domain.Models;
+﻿using TechVoiture.Domain.Exceptions;
+using TechVoiture.Domain.Models;
 using TechVoiture.Domain.Repositories;
 
 namespace TechVoiture.BLL.Services
@@ -12,12 +13,17 @@ namespace TechVoiture.BLL.Services
             _engineRepository = engineRepository;
         }
 
+private bool CheckEngineName(Engine engine)
+        {
+            return engine.Name.Contains("Puretech", StringComparison.InvariantCultureIgnoreCase);
+        }
+
 
         public Engine Create(Engine data)
         { 
-            if(data.Name.Contains("Puretech", StringComparison.InvariantCultureIgnoreCase))
+            if (CheckEngineName(data))
             {
-                throw new Exception("Moteur Puretech non autorisé...");
+                throw new InvalidValueException("name", "Création de moteur Puretech non autorisé !");
             }
 
             return _engineRepository.Create(data);
