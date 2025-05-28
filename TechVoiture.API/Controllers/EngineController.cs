@@ -55,8 +55,10 @@ namespace TechVoiture.API.Controllers
         [ProducesResponseType(404)]
         public IActionResult Update([FromRoute] int id, [FromBody] EngineInputDTO data)
         {
-            // TODO Utilisation des services (BLL) pour modifier un moteur
-            return StatusCode(501);
+            //! Envoyer une 404 !!!
+
+            Engine engineUpdated = _engineService.Update(id, _mapper.Map<Engine>(data));
+            return Ok(_mapper.Map<EngineOutputDTO>(engineUpdated));
         }
     }
 }

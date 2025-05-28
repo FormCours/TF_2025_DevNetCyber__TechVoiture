@@ -40,9 +40,17 @@ namespace TechVoiture.DAL.Repositories
             throw new NotImplementedException();
         }
 
-        public Engine Find(int id)
+        public Engine? Find(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Open();
+                return _connection.QuerySingleOrDefault<Engine>(
+                    "SELECT * FROM [engine] WHERE Id = @Id",
+                    new { id }
+                    );
+            }
+            finally { _connection.Close(); }
         }
 
         public IEnumerable<Engine> FindAll()
@@ -57,7 +65,19 @@ namespace TechVoiture.DAL.Repositories
 
         public Engine Update(Engine engine)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Open();
+                Engine result = _connection.QuerySingle<Engine>(
+                    "UPDATE [Engine]" +
+                    " SET Name = @Name," +
+                    "     Fuel = @Fuel" +
+                    " OUTPUT inserted.*" +
+                    " WHERE Id = @Id",
+                    engine);
+                return result;
+            }
+            finally { _connection.Close(); }
         }
     }
 }
