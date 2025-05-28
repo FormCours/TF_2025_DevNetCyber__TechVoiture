@@ -47,7 +47,12 @@ namespace TechVoiture.DAL.Repositories
 
         public IEnumerable<Engine> FindAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Open();
+                return _connection.Query<Engine>("SELECT * FROM Engine");
+            }
+            finally { _connection.Close(); }
         }
 
         public Engine Update(Engine engine)

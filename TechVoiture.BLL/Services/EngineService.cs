@@ -22,5 +22,10 @@ namespace TechVoiture.BLL.Services
 
             return _engineRepository.Create(data);
         }
+
+        public IEnumerable<Engine> GetAll()
+        {
+            return _engineRepository.FindAll();
+        }
     }
 }

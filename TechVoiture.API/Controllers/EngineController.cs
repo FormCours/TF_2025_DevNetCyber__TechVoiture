@@ -28,8 +28,12 @@ namespace TechVoiture.API.Controllers
         [ProducesResponseType<IEnumerable<EngineOutputDTO>>(200)]
         public IActionResult GetAll()
         {
-            // TODO Utilisation des services (BLL) pour obtenir les moteurs
-            return StatusCode(501);
+            IEnumerable<Engine> engines = _engineService.GetAll();
+
+            var test1 = engines.Select(engine => _mapper.Map<EngineOutputDTO>(engine));
+            var test2 = _mapper.Map<IEnumerable<EngineOutputDTO>>(engines);
+
+            return Ok(test2);
         }
 
         [HttpPost]
