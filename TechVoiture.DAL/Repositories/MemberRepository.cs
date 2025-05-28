@@ -21,7 +21,26 @@ namespace TechVoiture.DAL.Repositories
 
         public Member Create(Member member)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Open();
+
+                Member result = _connection.QuerySingle<Member>(
+                    "INSERT INTO [Member] ([Email],[HashPassword],[FirstName],[LastName],[RoleId])" +
+                    " OUTPUT [inserted].*" +
+                    " VALUES(@Email, @HashPassword, @FirstName, @LastName, @RoleId);",
+                    new { 
+                        member.Email,
+                        member.HashPassword,
+                        member.FirstName,
+                        member.LastName,
+                        RoleId= member.Role!.Id
+                    });
+                result.HashPassword = null;
+
+                return result;
+            }
+            finally { _connection.Close(); }
         }
 
         public bool Delete(int id)

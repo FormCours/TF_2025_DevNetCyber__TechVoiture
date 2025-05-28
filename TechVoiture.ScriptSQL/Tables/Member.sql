@@ -2,7 +2,7 @@
 (
 	[Id] INT IDENTITY,
 	[Email] VARCHAR(300) NOT NULL,
-	[HashPassword] NVARCHAR(80) NOT NULL,
+	[HashPassword] NVARCHAR(100) NOT NULL,
 	[FirstName] VARCHAR(100) NULL,
 	[LastName] VARCHAR(100) NULL,
 	[RoleId] INT NOT NULL,

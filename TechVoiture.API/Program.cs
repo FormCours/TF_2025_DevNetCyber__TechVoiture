@@ -14,6 +14,7 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 // - BLL
 builder.Services.AddScoped<EngineService>();
 builder.Services.AddScoped<MemberService>();
+builder.Services.AddScoped<AuthService>();
 // - DAL
 builder.Services.AddScoped<IEngineRepository, EngineRepository>();
 builder.Services.AddScoped<IMemberRepository, MemberRepository>();

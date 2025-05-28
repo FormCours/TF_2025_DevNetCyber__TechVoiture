@@ -11,10 +11,9 @@ namespace TechVoiture.Domain.Models
     {
         public int Id { get; set; }
         public required string Email { get; set; }
-        public required string HashPassword { get; set; }
+        public string? HashPassword { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public required MemberRole Role { get; set; }
-
+        public MemberRole? Role { get; set; }
     }
 }
