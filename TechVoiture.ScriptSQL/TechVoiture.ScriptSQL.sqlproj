@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Engine.sql" />
+    <Build Include="Tables\MemberRole.sql" />
+    <Build Include="Tables\Member.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TechVoiture.ScriptSQL.publish.xml" />

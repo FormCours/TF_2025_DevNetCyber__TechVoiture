@@ -13,8 +13,10 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 // Add services to the container.
 // - BLL
 builder.Services.AddScoped<EngineService>();
+builder.Services.AddScoped<MemberService>();
 // - DAL
 builder.Services.AddScoped<IEngineRepository, EngineRepository>();
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 // - DB
 builder.Services.AddTransient<DbConnection>((service) =>
 {
